@@ -17,4 +17,4 @@
 
  Try this in your website projects.
 
-#### By Priyanshu Ranjan, 2020.
+#### By [ranjanistic](https://github.com/ranjanistic/), 2020.
