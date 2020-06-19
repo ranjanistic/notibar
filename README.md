@@ -12,7 +12,7 @@
  - Call the methods defined in the [snackbar.js](https://github.com/ranjanistic/web-snackbar/blob/master/snackbar.js) script from your associated scripts to make snackbar work.
 
 ## Example
- You can use index.html as an example on how the web-snackbar works.
+ You can use [index.html](https://github.com/ranjanistic/web-snackbar/blob/master/index.html) as an example on how the web-snackbar works.
  Checkout this working page at [sample example](https://ranjanistic.github.io/web-snackbar/).
 
  Try this in your website projects.
