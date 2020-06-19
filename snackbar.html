@@ -1,0 +1,31 @@
+<!--
+    By Priyanshu Ranjan, 2020.
+-->
+<!--
+    This document provides content for the snackbar to show up. You have to copy and paste this in your own 
+    html documents where you want to show the snackbar style notfications.
+    The following steps are to be followed for each html document of yours you want to display message as 
+    bottom snackbar.
+  
+    Steps:
+    1) Copy the code from snackbar.html (this file) and paste it in your html document at the bottom of your <body> tag but before closing it.
+    2) Include the snackbar.js in your html document in head section, before you include any other script of yours.
+    3) Include the snackbar.css in your html document in head section.
+    4) Call the methods defined in snackbar.js from your associated scripts to make snackbar work.
+-->
+
+<div id="snackBar" class="snackbar snack-show">
+    <span class="snackText" id="snackText"></span>
+    <button class="snack-button" id="snackButton"></button>
+</div>
+
+<!--
+    NOTE: You can assign the snackButton your own click function by creating an instance of Snackbar class in your
+    own script file (must inclide snackbar.js in the <head> of document), and access the action as snack.button, and assingning
+    your method. For example -
+
+    var snack = new Snackbar();
+    snack.button.onclick = function(){
+        hideSnackBar();
+    }
+-->

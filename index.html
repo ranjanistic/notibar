@@ -1,0 +1,150 @@
+<!--
+    By Priyanshu Ranjan, 2020.
+-->
+<!--
+    This document is meant only for the purpose of demonstration of how web-snackbar works.
+    The presence/absence of index.html file does NOT affect the working of web-snackbar.
+
+    If you are looking for the code to include in your html document, look for snackbar.html file adjacent to the same file heirarchy. 
+    Other important files will be there too, but this index.html is NOT meant for your project usage.
+
+    You can use this file as an example on how the web-snackbar works.
+    Checkout this working page at https://ranjanistic.github.io/web-snackbar/
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Snackbar · Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-16LE">
+        <meta name="theme-color" content="#efefef">
+        <link rel="icon" href="https://avatars1.githubusercontent.com/u/41323263?s=400&u=6bfeda0fbe8c25f8d06b930f4cd0760295441e19&v=4">
+        <!--include snackbar.js before any other script-->
+        <script src="snackbar.js"></script>
+        <!--include snackbar.css-->
+        <link rel = "stylesheet" href="snackbar.css">
+        <style>
+            body{
+                margin:0;
+                font-family: 'Trebuchet MS', sans-serif;
+                padding:12px;
+                background-color: #efefef;
+                font-size: 22px;
+                transition:0.3s ease;
+            }
+            .positive{
+                border:0;
+                border-radius: 4px;
+                padding:12px 22px;
+                margin:8px;
+                font-size: 18px;
+                background-color: #216bd3;
+                color:white;
+                transition:0.3s ease;
+                cursor:pointer;
+            }
+            .positive:focus{
+                background-color: #0a418fd2;
+            }
+            .warning{
+                border:0;
+                border-radius: 4px;
+                padding:12px 22px;
+                margin:8px;
+                font-size: 18px;
+                background-color: #aa8300;
+                color:white;
+                transition:0.3s ease;
+                cursor:pointer;
+            }
+            .warning:focus{
+                background-color: #7a6307;
+            }
+            .error{
+                border:0;
+                border-radius: 4px;
+                padding:12px 22px;
+                margin:8px;
+                font-size: 18px;
+                background-color: #c41010;
+                color:white;
+                transition:0.3s ease;
+                cursor:pointer;
+            }
+            .error:focus{
+                background-color: #660909;
+            }
+            a{
+                text-decoration: none;
+                color:#4a81e7;   
+                transition:0.3s ease;
+            }
+            a:hover{
+                padding:12px;
+            }
+            a:focus{
+                color:#143b85;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="top:0;background-color: #021941;color:white;padding:22px;border-radius: 8px;" >
+            This is <a href="https://github.com/ranjanistic/web-snackbar">web-snackbar</a> by <a href="https://github.com/ranjanistic/">ranjansitc</a>.
+        </div >
+        <button class="positive" id="pos">
+            Normal Snackbar
+        </button>
+        <button class="positive" id="posAct">
+            Normal Snackbar with action
+        </button>
+        <br/>
+        <button class="warning" id="war">
+            Warning Snackbar
+        </button>
+        <button class="warning" id="warAct">
+            Warning Snackbar with action
+        </button>
+        <br/>
+        <button class="error" id="neg">
+            Error Snackbar
+        </button>
+        <button class="error" id="negAct">
+            Error Snackbar with action
+        </button>
+
+        <!--Include this div for snackbar; to be placed as is.-->
+        <div id="snackBar" class="snackbar snack-show">
+            <span class="snackText" id="snackText"></span>
+            <button class="snack-button" id="snackButton"></button>
+        </div>
+
+
+        <script type="text/javascript">
+            document.getElementById('pos').onclick = function(){
+                showSnackBar('This is a normal snackbar!');
+            }
+            document.getElementById('posAct').onclick = function(){
+                showSnackBar('This is a normal snackbar with action!',true,"Hide");
+            }
+            document.getElementById('war').onclick = function(){
+                showSnackBar('This is a warning snackbar!',false,'',false,true);
+            }
+            document.getElementById('warAct').onclick = function(){
+                showSnackBar('This is a warning snackbar with action!',true,"Hide",false,true);
+            }
+            document.getElementById('neg').onclick = function(){
+                showSnackBar('This is an error snackbar!',false,'',false);
+            }
+            document.getElementById('negAct').onclick = function(){
+                showSnackBar('This is an error snackbar with action!',true,"Hide",false,false);
+            }
+
+            //Assign the action button your own action, here assigned as hiding the snackbar.
+            var snack = new Snackbar();
+            snack.button.onclick = function(){
+                hideSnackBar();         //replace with your own action.
+            }
+        </script>
+    </body>
+</html>
